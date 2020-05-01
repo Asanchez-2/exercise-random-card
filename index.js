@@ -1,18 +1,22 @@
-var cardSuits = ['spades', 'diamonds', 'hearts', 'clubs'];
-var cardValue = [
-    '1','2', '3', '4', 
-    '5', '6', '7', '8', 
-    '9', '10', 'J', 'Q', 'K'];
+const cardSuits = ['spades', 'diamonds', 'hearts', 'clubs'];
+const cardStyles = ['spadeCard', 'diamondCard', 'heartCard', 'clubCard'];
+const cardSymbols = ['♠️', '♦️', '♥️', '♣️'];
+const cardValue = ['1','2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K'];
 
 const GenerateRandomCard = () => {
     
-    let cardSuitsRandom = Math.floor(Math.random() * (cardSuits.length));
-    console.log(cardSuitsRandom);
+    let cardSuitsRandom = Math.floor(Math.random() * 
+      (cardSuits.length));
 
-    let cardValueRandom = Math.floor(Math.random()  * (cardValue.length));
+    let cardValueRandom = Math.floor(Math.random() *
+      (cardValue.length));
 
-    return  cardSuits[cardSuitsRandom] + cardValue [cardValueRandom] + cardSuits[cardSuitsRandom]
+    return `<div class="${cardStyles[cardSuitsRandom]}">` +
+      '<div>' + cardValue[cardValueRandom] + ' ' +
+      cardSymbols[cardSuitsRandom] +  '</div></div>'
 };
+
 window.onload = () => {
-    document.querySelector('#allCard').innerHTML = GenerateRandomCard();
+  document.querySelector('#cardMap').innerHTML =
+    GenerateRandomCard();
 }
