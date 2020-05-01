@@ -1,12 +1,30 @@
 body {
     background-color: green
 }
+
 .allCard {
     display: flex;
-    justify-content: center;
-    height: 400px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 80px auto 10px auto;
+    height: 420px;
     width: 360px;
     background-color: white;
     border-radius: 5px;
-    align-content: center;
+}
+
+.heartCard {
+
+}
+
+.spadeCard {
+
+}
+
+.diamondCard {
+
+}
+
+.clubCard {
+
 }
